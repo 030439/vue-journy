@@ -19,7 +19,9 @@
           };
         },
         mounted(){
-            
+            setTimeout(()=>{
+                this.greeting="value changed"
+            },200);
         }
       }).mount("#app");
     </script>
