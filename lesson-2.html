@@ -21,21 +21,23 @@
   </head>
   <body>
     <div id="app">
-      <button :class="buttonClass" v-on:click="toggle">Click Me</button>
+      <button :class="active?'text-green':'text-red'" v-on:click="toggle">
+        Click Me
+      </button>
     </div>
 
     <script>
       Vue.createApp({
         data() {
           return {
-            buttonClass: "text-red",
+            active: false,
           };
         },
-        method:{
-            toggle(){
-                alert("toggle");
-            }
-        }
+        methods: {
+          toggle() {
+            this.active = !this.active;
+          },
+        },
       }).mount("#app");
     </script>
   </body>
