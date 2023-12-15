@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Vue Learnings</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: grid;
+        place-items: center;
+      }
+      .text-red {
+        color: red;
+      }
+      .text-green {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <button class="text-red">Click Me</button>
+    </div>
+
+    <script>
+      Vue.createApp({}).mount("#app");
+    </script>
+  </body>
+</html>
