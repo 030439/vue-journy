@@ -9,7 +9,13 @@
         </div>
       
         <script>
-            Vue.createapp({}).mount('#app');
+            Vue.createapp({
+                data(){
+                    return{
+                        greeting:"Hello World"
+                    }
+                }
+            }).mount('#app');
         </script>
     </body>
 </html>
