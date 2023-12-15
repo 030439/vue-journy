@@ -1,24 +1,27 @@
 <html>
-    <head>
-        <title>Vue Learnings</title>
-        <script src="https://unpkg.com/vue@3"></script>
-    </head>
-    <body>
-        <p>
-            <input v-model="greeting">
-        </p>
-        <div id="app">
-            {{greeting}}
-        </div>
-      
-        <script>
-            Vue.createApp({
-                data(){
-                    return{
-                        greeting:"Hello World"
-                    };
-                }
-            }).mount('#app');
-        </script>
-    </body>
+  <head>
+    <title>Vue Learnings</title>
+    <script src="https://unpkg.com/vue@3"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>
+        <input v-model="greeting" />
+      </p>
+      {{greeting}}
+    </div>
+
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            greeting: "Hello World",
+          };
+        },
+        mounted(){
+            
+        }
+      }).mount("#app");
+    </script>
+  </body>
 </html>
