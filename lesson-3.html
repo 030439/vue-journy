@@ -12,13 +12,13 @@
         place-items: center;
       }
     </style>
-    
+
   </head>
   <body>
     <div id="app">
       <h2>In Progress Assignments</h2>
       <ul>
-        <li v-for="assignment in assignments.filter(a=>!a.complete)">
+        <li v-for="assignment in assignments.filter(a=>!a.complete)" :key=""">
           <label
             >{{assignment.name}}
             <input type="checkbox" v-model="assignment.complete" />
