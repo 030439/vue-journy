@@ -29,13 +29,10 @@
           </li>
         </ul>
       </section>
-      <section v-show="assignments.filter(a=>a.complete).length">
+      <section v-show="completedAssignments.length">
         <h2 style="margin-top: 20px">Completed</h2>
         <ul>
-          <li
-            v-for="assignment in assignments.filter(a=>a.complete)"
-            :key="assignment.id"
-          >
+          <li v-for="assignment in completedAssignments" :key="assignment.id">
             <label
               >{{assignment.name}}
               <input type="checkbox" v-model="assignment.complete" />
@@ -59,6 +56,11 @@
               { name: "Turn in homework", complete: false, id: 3 },
             ],
           };
+        },
+        computed: {
+          completedAssignments() {
+            return this.assignments.filter((assignment) => assignment.complete);
+          },
         },
       };
       Vue.createApp(app).mount("#app");
