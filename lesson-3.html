@@ -15,18 +15,27 @@
   </head>
   <body>
     <div id="app">
-      <h2>Assignments</h2>
+      <h2>In Progress Assignments</h2>
       <ul>
-        <li v-for="assignment in assignments">
+        <li v-for="assignment in assignments.filter(a=>!a.complete)">
           <label
             >{{assignment.name}}
             <input type="checkbox" v-model="assignment.complete" />
           </label>
         </li>
       </ul>
-      <pre>
+      <h2 style="margin-top: 20px">Completed</h2>
+      <ul>
+        <li v-for="assignment in assignments.filter(a=>a.complete)">
+          <label
+            >{{assignment.name}}
+            <input type="checkbox" v-model="assignment.complete" />
+          </label>
+        </li>
+      </ul>
+      <!-- <pre>
         {{assignments}}
-      </pre>
+      </pre> -->
     </div>
 
     >
