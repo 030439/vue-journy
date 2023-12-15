@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title>Vue Learnings</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: grid;
+        place-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <h2>Assignments</h2>
+      <ul>
+        <li v-for="assignment in assignments">
+          <label
+            >{{assignment.name}}
+            <input type="checkbox" v-model="assignment.complete" />
+          </label>
+        </li>
+      </ul>
+      <pre>
+        {{assignments}}
+      </pre>
+    </div>
+
+    >
+    <script>
+      let app = {
+        data() {
+          return {
+            assignments: [
+              { name: "Finished Projects", complete: false },
+              { name: "Read chapter", complete: false },
+              { name: "Turn in homework", complete: false },
+            ],
+          };
+        },
+      };
+      Vue.createApp(app).mount("#app");
+    </script>
+  </body>
+</html>
