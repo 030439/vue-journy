@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="task-1.css" />
   </head>
   <body>
-    <section class="ftco-section">
+    <section class="ftco-section" id="app">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6 text-center mb-5">
@@ -67,23 +67,23 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form>
+                <form @submit.prevent="submitForm">
                   <div class="form-group">
-                    <label for="inputAddress">Address</label>
+                    <label for="inputAddress">Assignment Name</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="inputAddress"
-                      placeholder="1234 Main St"
+                      v-model="formData.name"
+                      id="topic"
                     />
                   </div>
                   <div class="form-group">
-                    <label for="inputAddress">Address</label>
+                    <label for="inputAddress">Due Date</label>
                     <input
-                      type="text"
+                      type="date"
                       class="form-control"
-                      id="inputAddress"
-                      placeholder="1234 Main St"
+                      id="due-date"
+                      v-model="formData.dueDate"
                     />
                   </div>
                 </form>
@@ -130,18 +130,10 @@
                         style="background-image: url(images/person_1.jpg)"
                       ></div>
                       <div class="pl-3 email">
-                        <span
-                          ><a
-                            href="/cdn-cgi/l/email-protection"
-                            class="__cf_email__"
-                            data-cfemail="026f6370696d76766d42676f636b6e2c616d6f"
-                            >[email&#160;protected]</a
-                          ></span
-                        >
                         <span>Added: 01/03/2020</span>
                       </div>
                     </td>
-                    <td>Markotto89</td>
+                    <td>{{ formData.name }}</td>
                     <td class="status"><span class="active">Active</span></td>
                     <td>
                       <button
@@ -163,6 +155,25 @@
         </div>
       </div>
     </section>
+    <script>
+      let app = {
+        data() {
+          return {
+            formData: {
+              name: "",
+              dueDate: "",
+            },
+          };
+        },
+        methods: {
+          submitForm() {
+            // Process the form data as needed
+            console.log("Form submitted with data:", this.formData);
+          },
+        },
+      };
+      Vue.createApp(app).mount("#app");
+    </script>
   </body>
 </html>
 <script
