@@ -15,11 +15,11 @@
   </head>
   <body>
     <div id="app">
-      <section v-show="assignments.filter(a=>!a.complete).length">
+      <section v-show="inProgressAssignments.length">
         <h2>In Progress Assignments</h2>
         <ul>
           <li
-            v-for="assignment in assignments.filter(a=>!a.complete)"
+            v-for="assignment in inProgressAssignments"
             :key="assignment.id"
           >
             <label
@@ -60,6 +60,9 @@
         computed: {
           completedAssignments() {
             return this.assignments.filter((assignment) => assignment.complete);
+          },
+          inProgressAssignments() {
+            return this.assignments.filter((progress) => !progress.complete);
           },
         },
       };
