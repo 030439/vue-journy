@@ -120,10 +120,15 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="alert" role="alert">
+                  <tr
+                    v-for="assignment in assignments"
+                    :key="assignment.id"
+                    class="alert"
+                    role="alert"
+                  >
                     <td>
                       <label class="checkbox-wrap checkbox-primary">
-                        <input type="checkbox" checked />
+                        <input type="checkbox" />
                         <span class="checkmark"></span>
                       </label>
                     </td>
@@ -175,10 +180,12 @@
 
         methods: {
           saveChanges() {
+            this.assignmentIdCounter++;
             // Add the current form data to the assignments array
             this.assignments.push({
               name: this.formData.name,
               dueDate: this.formData.dueDate,
+              id: this.assignmentIdCounter,
             });
 
             // Clear form data after saving
