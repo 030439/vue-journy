@@ -160,21 +160,32 @@
               checked: false,
               status: "Warning",
             },
-            assignments: {
-              name: "Existing Assignmnets",
-              dueDate: "12,12,2023",
-              complete: false,
-              id: 1,
-              checked: false,
-            },
+            assignments: [
+              {
+                name: "Existing Assignmnets",
+                dueDate: "12,12,2023",
+                complete: false,
+                id: 1,
+                checked: false,
+              },
+            ],
           };
         },
 
         methods: {
           saveChanges() {
-            // Process the form data as needed
-            
-            console.log("Form submitted with data:", this.formData);
+            // Add the current form data to the assignments array
+            this.assignments.push({
+              name: this.formData.name,
+              dueDate: this.formData.dueDate,
+            });
+
+            // Clear form data after saving
+            this.formData.name = "";
+            this.formData.dueDate = "";
+
+            // Close the modal
+            $("#exampleModal").modal("hide");
           },
         },
       };
