@@ -67,7 +67,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form @submit.prevent="submitForm">
+                <form>
                   <div class="form-group">
                     <label for="inputAddress">Assignment Name</label>
                     <input
@@ -96,7 +96,11 @@
                 >
                   Close
                 </button>
-                <button type="button" class="btn btn-primary">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  @click="saveChanges"
+                >
                   Save changes
                 </button>
               </div>
@@ -167,8 +171,9 @@
         },
 
         methods: {
-          submitForm() {
+          saveChanges() {
             // Process the form data as needed
+            
             console.log("Form submitted with data:", this.formData);
           },
         },
