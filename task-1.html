@@ -113,7 +113,6 @@
                     <th>Email</th>
                     <th>Username</th>
                     <th>Status</th>
-                    <th>&nbsp;</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -133,8 +132,10 @@
                         <span>Added: 01/03/2020</span>
                       </div>
                     </td>
-                    <td>{{ formData.name }}</td>
-                    <td class="status"><span class="active">Active</span></td>
+                    <td>{{ formData.name }}sdfsdfsdf</td>
+                    <td class="status">
+                      <span :class="checked ? 'active':'waiting'">Active</span>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -150,14 +151,14 @@
             formData: {
               name: "",
               dueDate: "",
-              checked:false
+              checked: false,
             },
             assignments: {
               name: "Existing Assignmnets",
               dueDate: "12,12,2023",
               complete: false,
               id: 1,
-              checked:false
+              checked: false,
             },
           };
         },
