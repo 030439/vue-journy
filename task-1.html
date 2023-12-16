@@ -134,7 +134,9 @@
                     </td>
                     <td>{{ formData.name }}sdfsdfsdf</td>
                     <td class="status">
-                      <span :class="checked ? 'active':'waiting'">Active</span>
+                      <span :class="checked ? 'active':'waiting'"
+                        >{{formData.status}}</span
+                      >
                     </td>
                   </tr>
                 </tbody>
@@ -152,6 +154,7 @@
               name: "",
               dueDate: "",
               checked: false,
+              status: "Warning",
             },
             assignments: {
               name: "Existing Assignmnets",
