@@ -1,7 +1,7 @@
 <template>
     <div>
-      <h1>{{ title}}</h1>
-      <TaskButton />
+      <h1>{{ title}}</h1> 
+      <TaskButton  text="Add Task" color="green"/>
       <!-- Other content goes here -->
     </div>
   </template>

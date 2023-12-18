@@ -1,5 +1,5 @@
 <template>
-<button class="btn">Add Task</button>
+<button @click="BtnClick" :style ="{background:color}" class="btn">{{text}}</button>
 </template>
 <script>
 export default{
@@ -7,6 +7,6 @@ export default{
     props:{
         text:String,
         color:String,
-    }
+    },
 }
 </script>
