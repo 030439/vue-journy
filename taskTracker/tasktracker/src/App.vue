@@ -1,18 +1,22 @@
 <template>
-<h>Hello World</h>
+   
+  <div class="container">
+    <PageHeader />
+  </div>
+ 
 </template>
 
 <script>
+import PageHeader from './components/PageHeader.vue';
 
 export default {
   name: 'App',
   components: {
-  }
-}
+    PageHeader,
+  },
+};
 </script>
-//scoped means this style will only be apply on this component
+
 <style>
-header{
-  color:red;
-}
+/* Your styles go here */
 </style>
