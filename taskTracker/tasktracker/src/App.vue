@@ -10,7 +10,9 @@ export default {
   }
 }
 </script>
-
+//scoped means this style will only be apply on this component
 <style>
-
+header{
+  color:red;
+}
 </style>
