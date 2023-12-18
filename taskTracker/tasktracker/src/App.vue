@@ -2,17 +2,20 @@
    
   <div class="container">
     <PageHeader title="Task Tracker"/>
+    <TasksArray :tasks="tasks" />
   </div>
  
 </template>
 
 <script>
 import PageHeader from './components/PageHeader.vue';
+import TasksArray from './components/TasksArray.vue';
 
 export default {
   name: 'App',
   components: {
     PageHeader,
+    TasksArray,
   },
   data(){
     return {
