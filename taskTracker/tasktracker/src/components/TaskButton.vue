@@ -8,5 +8,10 @@ export default{
         text:String,
         color:String,
     },
+    methods:{
+        BtnClick(){
+            alert("clicked");
+        }
+    }
 }
 </script>

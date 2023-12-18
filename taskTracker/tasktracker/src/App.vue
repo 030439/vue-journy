@@ -14,6 +14,14 @@ export default {
   components: {
     PageHeader,
   },
+  data(){
+    return {
+      Tasks:[],
+    }
+  },
+  created(){
+    
+  }
 };
 </script>
 
