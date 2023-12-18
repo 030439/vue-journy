@@ -16,11 +16,30 @@ export default {
   },
   data(){
     return {
-      Tasks:[],
+      tasks:[],
     }
   },
   created(){
-    
+    this.tasks=[
+      {
+        id:1,
+        text:'Doctor Appointment',
+        data:'March 1st at 2:30pm',
+        reminder:true,
+      },
+      {
+        id:2,
+        text:'Office Appointment',
+        data:'March 1st at 2:30pm',
+        reminder:true,
+      },
+      {
+        id:3,
+        text:'Employee Appointment',
+        data:'March 1st at 2:30pm',
+        reminder:true,
+      },
+    ]
   }
 };
 </script>
