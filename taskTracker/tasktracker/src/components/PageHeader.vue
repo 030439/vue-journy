@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1>This is the PageHeader Component</h1>
+      <h1>{{ title}}</h1>
       <!-- Other content goes here -->
     </div>
   </template>
