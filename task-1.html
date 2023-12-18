@@ -7,7 +7,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <script src="https://unpkg.com/vue@3"></script>
+    <script src="vue.js"></script>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700"
       rel="stylesheet"
@@ -128,7 +128,7 @@
                   >
                     <td>
                       <label class="checkbox-wrap checkbox-primary">
-                        <input type="checkbox" />
+                        <input type="checkbox" v-moddel="complete" />
                         <span class="checkmark"></span>
                       </label>
                     </td>
@@ -138,12 +138,12 @@
                         style="background-image: url(images/person_1.jpg)"
                       ></div>
                       <div class="pl-3 email">
-                        <span>Added: 01/03/2020</span>
+                        <span>Added: {{assignment.dueDate}}</span>
                       </div>
                     </td>
                     <td>{{ formData.name }}sdfsdfsdf</td>
                     <td class="status">
-                      <span :class="checked ? 'active':'waiting'"
+                      <span :class="assignment.complete ? 'active':'waiting'"
                         >{{formData.status}}</span
                       >
                     </td>

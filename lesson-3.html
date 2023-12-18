@@ -18,10 +18,7 @@
       <section v-show="inProgressAssignments.length">
         <h2>In Progress Assignments</h2>
         <ul>
-          <li
-            v-for="assignment in inProgressAssignments"
-            :key="assignment.id"
-          >
+          <li v-for="assignment in inProgressAssignments" :key="assignment.id">
             <label
               >{{assignment.name}}
               <input type="checkbox" v-model="assignment.complete" />
