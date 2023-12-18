@@ -10,7 +10,7 @@
     name: 'PageHeader',
     props:{
         title:String,
-    }
+    },
   };
   </script>
   
