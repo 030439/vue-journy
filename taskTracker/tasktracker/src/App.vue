@@ -1,7 +1,7 @@
 <template>
    
   <div class="container">
-    <PageHeader />
+    <PageHeader title="Task Tracker"/>
   </div>
  
 </template>
