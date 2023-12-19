@@ -38,9 +38,9 @@ export default {
       const res=await fetch('api/tasks',{
         method:'POST',
         headers:{
-          'Content-type':'application.json',
-          body:JSON.stringify(task)
-        }
+          'Content-type':'application/json',
+        },
+        body:JSON.stringify(task)
       })
       const data =await res.json()
     this.tasks=[...this.tasks,data]
@@ -52,7 +52,7 @@ export default {
    this.tasks=this.tasks.map((task)=>task.id==id ? {...task, reminder: !task.reminder }:task)
     },
     async fetchTask(){
-      const res=await fetch('http://localhost:300/tasks')
+      const res=await fetch('api/tasks')
       const data =await res.json()
       return data
     },
