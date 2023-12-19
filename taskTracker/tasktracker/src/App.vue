@@ -44,19 +44,19 @@ export default {
    this.tasks=this.tasks.map((task)=>task.id==id ? {...task, reminder: !task.reminder }:task)
     },
     async fetchTask(){
-      const res=await fetch('api/tasks')
+      const res=await fetch('http://localhost:300/tasks')
       const data =await res.json()
       return data
     },
-    async fetchTask(id){
+    async fetchSingleTask(id){
       const res=await fetch(`api/tasks/${id}`)
       const data =await res.json()
       return data
     }
   },
   async created(){
-    this.tasks= await  this.fetchTask()
-  }
+    this.tasks= await this.fetchTask()
+  },
 };
 </script>
 
