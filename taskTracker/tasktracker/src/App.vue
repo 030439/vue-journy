@@ -34,7 +34,7 @@ export default {
     toggleAddTask(){
       this.showTask=!this.showTask
     },
-    addTask(task){
+    async addTask(task){
     this.tasks=[...this.tasks,task]
     },
     deleteTask(id){
