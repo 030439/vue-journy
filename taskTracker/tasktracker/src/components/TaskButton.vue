@@ -10,7 +10,7 @@ export default{
     },
     methods:{
         BtnClick(){
-            alert("clicked");
+            this.$emit('btn-click')
         }
     }
 }

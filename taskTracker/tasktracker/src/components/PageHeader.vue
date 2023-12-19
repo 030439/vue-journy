@@ -1,7 +1,9 @@
 <template>
     <div>
       <h1>{{ title}}</h1> 
-      <TaskButton  text="Add Task" color="green"/>
+      <TaskButton @btn-click="$emit('toggle-add-task')" 
+                  :text="ChangeBtn ? 'Close' :'Add Task'"
+                  :color="ChangeBtn ? 'red' : 'green'"/>
       <!-- Other content goes here -->
     </div>
   </template>
@@ -12,6 +14,7 @@
     name: 'PageHeader',
     props:{
         title:String,
+        ChangeBtn:Boolean,
     },
     components:{
         TaskButton,

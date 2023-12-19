@@ -1,7 +1,9 @@
 <template>
    
   <div class="container">
-    <PageHeader title="Task Tracker"/>
+    <PageHeader @toggle-add-task="toggleAddTask" 
+                title="Task Tracker"
+                :ChangeBtn="showTask"/>
     <div v-show="showTask">
       <AddTask @add-task="addTask"/>
     </div>
@@ -25,10 +27,13 @@ export default {
   data(){
     return {
       tasks:[],
-      showTask:false
+      showTask: true
     }
   },
   methods:{
+    toggleAddTask(){
+      this.showTask=!this.showTask
+    },
     addTask(task){
     this.tasks=[...this.tasks,task]
     },
