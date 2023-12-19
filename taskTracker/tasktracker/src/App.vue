@@ -43,6 +43,10 @@ export default {
     toggleReminder(id){
    this.tasks=this.tasks.map((task)=>task.id==id ? {...task, reminder: !task.reminder }:task)
     }
+    async fetchTask(){
+      const res=await fetch('http://localhost:300/tasks')
+      const data =await res.json()
+    }
   },
   created(){
     this.tasks=[
