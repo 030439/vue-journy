@@ -2,6 +2,9 @@
    
   <div class="container">
     <PageHeader title="Task Tracker"/>
+    <div v-show="showTask">
+      <AddTask @add-task="addTask"/>
+    </div>
     <TasksArray @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
   </div>
  
@@ -10,19 +13,25 @@
 <script>
 import PageHeader from './components/PageHeader.vue';
 import TasksArray from './components/TasksArray.vue';
+import AddTask from './components/AddTask.vue';
 
 export default {
   name: 'App',
   components: {
     PageHeader,
     TasksArray,
+    AddTask,
   },
   data(){
     return {
       tasks:[],
+      showTask:false
     }
   },
   methods:{
+    addTask(task){
+    this.tasks=[...this.tasks,task]
+    },
     deleteTask(id){
      this.tasks=this.tasks.filter((task)=> task.id !==id);
     },
