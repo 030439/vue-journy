@@ -2,7 +2,7 @@
    
   <div class="container">
     <PageHeader title="Task Tracker"/>
-    <TasksArray :tasks="tasks" />
+    <TasksArray @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks" />
   </div>
  
 </template>
@@ -22,24 +22,32 @@ export default {
       tasks:[],
     }
   },
+  methods:{
+    deleteTask(id){
+     this.tasks=this.tasks.filter((task)=> task.id !==id);
+    },
+    toggleReminder(id){
+   this.tasks=this.tasks.map((task)=>task.id==id ? {...task, reminder: !task.reminder }:task)
+    }
+  },
   created(){
     this.tasks=[
       {
         id:1,
         text:'Doctor Appointment',
-        data:'March 1st at 2:30pm',
+        day:'March 1st at 2:30pm',
         reminder:true,
       },
       {
         id:2,
         text:'Office Appointment',
-        data:'March 1st at 2:30pm',
-        reminder:true,
+        day:'March 1st at 2:30pm',
+        reminder:false,
       },
       {
         id:3,
         text:'Employee Appointment',
-        data:'March 1st at 2:30pm',
+        day:'March 1st at 2:30pm',
         reminder:true,
       },
     ]
