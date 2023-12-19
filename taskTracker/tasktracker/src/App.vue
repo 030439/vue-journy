@@ -35,7 +35,15 @@ export default {
       this.showTask=!this.showTask
     },
     async addTask(task){
-    this.tasks=[...this.tasks,task]
+      const res=await fetch('api/tasks',{
+        method:'POST',
+        headers:{
+          'Content-type':'application.json',
+          body:JSON.stringify(task)
+        }
+      })
+      const data =await res.json()
+    this.tasks=[...this.tasks,data]
     },
     deleteTask(id){
      this.tasks=this.tasks.filter((task)=> task.id !==id);
